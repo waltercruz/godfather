@@ -6,12 +6,12 @@
 
     <parameters>
         <parameter key="godfather.class">PUGX\Godfather\Godfather</parameter>
-        <parameter key="godfather.context.class">PUGX\Godfather\Context</parameter>
     </parameters>
 
     <services>
-        <service id="godfather" class="%godfather.class%">
-            <argument>%godfather.context.class%</argument>
+        <service id="godfather" class="%godfather.class%" lazy="true">
+            <argument type="service" id="service_container" />
+            <argument>godfather</argument>
         </service>
     </services>
 </container>

@@ -1,8 +1,8 @@
 <?php
 
-namespace PUGX\GodfatherBundle\Tests\DependencyInjection\Compiler;
+namespace PUGX\GodfatherBundle\Tests\Container\DependencyInjection;
 
-use PUGX\GodfatherBundle\DependencyInjection\Compiler\CompilerPass;
+use PUGX\Godfather\Container\DependencyInjection\CompilerPass;
 use Symfony\Component\DependencyInjection\Definition;
 
 class CompilerPassTest extends \PHPUnit_Framework_TestCase
