@@ -5,8 +5,8 @@
 
  1. [The Strategy pattern](#the-strategy-pattern)
  2. [Installation](#how-it-works)
- 3. [Contribution](#contribution)
- 4. [Install the symfony2 bundle](#using-the-symfony2-bundle)
+ 3. [Symfony2 bundle](#using-the-symfony2-bundle)
+ 4. [Contribution](#contribution)
 
 [![travis-ci](https://secure.travis-ci.org/PUGX/godfather.png)](http://travis-ci.org/PUGX/godfather) [![Latest Stable Version](https://poser.pugx.org/PUGX/godfather/v/stable.png)](https://packagist.org/packages/PUGX/godfather) [![Total Downloads](https://poser.pugx.org/PUGX/godfather/downloads.png)](https://packagist.org/packages/PUGX/godfather) [![Latest Unstable Version](https://poser.pugx.org/PUGX/godfather/v/unstable.png)](https://packagist.org/packages/PUGX/godfather)
 
@@ -23,7 +23,7 @@ Strategy lets the algorithm vary independently from clients that use it.
 
 ## TL;DR
 
-Given an object, you want to know its Service.
+Given an object, you want to know its service.
 
 eg. `Entity\Mug` has a `MugService` and `Entity\Tshirt` has a `TshirtService`
 
@@ -32,6 +32,8 @@ $product = random(0,1)? new Entity\Mug: new Entity\Product
 $productService = $godfather->getStrategy('service', $product);
 // also works with
 $productService = $godfather->getService($product);
+echo get_class($productService);
+// will be randomly TshirtService or MugService
 ```
 
 ## Sandbox
@@ -51,7 +53,7 @@ php godfather.php
 
 ## Installation
 
-`composer require pugx/godfather dev-master`
+`composer require pugx/godfather ~0.1`
 
 ## A simple use case
 
@@ -259,3 +261,7 @@ composer create-project pugx/godfather --dev -s dev
 cd godfather
 bin/phpunit
 ```
+
+## License
+
+[The license is visible here](LICENSE).
